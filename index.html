@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIDY foods — FoodieExpress</title>
-    <!-- Favicon and branding -->
+   
     <link rel="icon" type="image/png" sizes="32x32" href="./image.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./image.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./image.png">
     <meta name="theme-color" content="#ff6b35">
     <meta name="author" content="THEOPIN.B(DR)">
-    <!-- Google Fonts for Poppins -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Styles for FoodieExpress demo - responsive and modernized */
-        /* CSS Variables for easy theming */
+        
         :root{
-            --accent: #ff6b35;      /* primary warm orange */
-            --accent-2: #ff8c42;    /* primary gradient end orange */
-            --bg: #fbfbfc;          /* light page background */
-            --card-bg: #ffffff;     /* white card backgrounds */
-            --muted: #6b7280;       /* secondary text color */
-            --text: #0f172a;        /* main text color */
-            --nav-bg: #0b1220;      /* dark nav / footer background */
+            --accent: #ff6b35;     
+            --accent-2: #ff8c42;   
+            --bg: #fbfbfc;         
+            --card-bg: #ffffff;     
+            --muted: #6b7280;       
+            --text: #0f172a;        
+            --nav-bg: #0b1220;      
         }
 
-        /* Universal Box-Sizing */
+       
         *{box-sizing: border-box}
 
-        /* Body Base Styles */
+        
         body{
             margin:0;
             font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -37,13 +36,13 @@
             line-height: 1.6;
         }
 
-        /* Header Styles */
+        
         .header-dark{
             background:var(--nav-bg);
             padding:0.15rem 0;
             position: sticky;
             top: 0;
-            z-index: 50; /* Ensure header stays on top */
+            z-index: 50; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .nav-inner{
@@ -53,7 +52,7 @@
             display:flex;
             align-items:center;
             justify-content:space-between;
-            min-height: 60px; /* Ensure consistent height */
+            min-height: 60px;
         }
         .brand{
             display:inline-flex;
@@ -72,13 +71,12 @@
         .brand span{
             font-weight:700;
             color:#fff;
-            font-size:1.2rem; /* Slightly larger font for brand */
+            font-size:1.2rem; 
         }
 
-        /* Desktop Navigation Links */
-        .desktop-nav-links{
+               .desktop-nav-links{
             display:flex;
-            gap:0.8rem; /* Slightly more space between links */
+            gap:0.8rem; 
             align-items:center;
             margin:0;
             padding:0;
@@ -86,28 +84,28 @@
         }
         .desktop-nav-links li a{
             display:inline-block;
-            padding:.5rem 1rem; /* More generous padding */
+            padding:.5rem 1rem;
             border-radius:8px;
             background:rgba(255,255,255,0.95);
             color:var(--text);
             text-decoration:none;
             font-weight:600;
             font-size:.95rem;
-            transition: all 0.2s ease; /* Smooth transitions */
+            transition: all 0.2s ease; 
         }
         .desktop-nav-links li a:hover{
             background:#fff;
             box-shadow:0 6px 18px rgba(0,0,0,0.06);
-            transform: translateY(-2px); /* Subtle lift on hover */
+            transform: translateY(-2px);
         }
-        /* Navigation active state */
+       
         .desktop-nav-links li a.active{
             background:linear-gradient(90deg,rgba(255,255,255,1),rgba(255,255,255,0.95));
             color:var(--accent);
             box-shadow:0 8px 20px rgba(0,0,0,0.06);
         }
 
-        /* Hamburger Icon for Mobile */
+       
         #menu-toggle{
             background:transparent;
             border:0;
@@ -115,51 +113,51 @@
             border-radius:8px;
             color:#fff;
             cursor: pointer;
-            display: none; /* Hidden by default, shown on mobile */
+            display: none; 
         }
         #menu-toggle svg {
-            width: 28px; /* Larger icon */
+            width: 28px;
             height: 28px;
         }
         #menu-toggle:focus{
             outline:3px solid rgba(255,255,255,0.12);
             outline-offset: 4px;
         }
-        /* Close icon styling for the toggle when open */
+       
         #menu-toggle.open{background:rgba(255,255,255,0.06);}
 
 
-        /* Mobile Menu Overlay */
+       
         #mobile-menu{
             position:fixed;
-            inset:0; /* Covers entire viewport */
+            inset:0; 
             display:flex;
             align-items:center;
             justify-content:center;
-            background:rgba(2,6,23,0.7); /* Darker overlay */
+            background:rgba(2,6,23,0.7); 
             z-index:80;
             padding:1.25rem;
             transition:opacity .18s ease,visibility .18s ease;
-            visibility: hidden; /* Hidden by default */
+            visibility: hidden; 
             opacity: 0;
         }
-        #mobile-menu.active{ /* Class added by JS to show menu */
+        #mobile-menu.active{ 
             visibility: visible;
             opacity: 1;
         }
         #mobile-menu .mobile-menu-list{
-            background:linear-gradient(180deg, var(--accent), var(--accent-2)); /* Gradient background */
-            padding:1.5rem; /* More padding */
+            background:linear-gradient(180deg, var(--accent), var(--accent-2));
+            padding:1.5rem;
             border-radius:12px;
             max-width:420px;
             width:92%;
-            box-shadow:0 18px 40px rgba(2,6,23,0.25); /* Stronger shadow */
+            box-shadow:0 18px 40px rgba(2,6,23,0.25); 
             position:relative;
             transform:translateY(-8px);
             opacity:0;
             transition:transform .22s cubic-bezier(.2,.9,.3,1),opacity .18s;
         }
-        #mobile-menu.active .mobile-menu-list{ /* Animation when active */
+        #mobile-menu.active .mobile-menu-list{
             transform:translateY(0);
             opacity:1;
         }
@@ -184,7 +182,7 @@
             background: #fff;
         }
 
-        /* Close button inside mobile menu */
+       
         .mobile-menu-close{
             position:absolute;
             top:8px;
@@ -192,26 +190,25 @@
             background:transparent;
             border:0;
             color:#fff;
-            font-size:1.5rem; /* Larger close icon */
+            font-size:1.5rem;
             padding:.45rem;
             border-radius:8px;
             cursor: pointer;
         }
         .mobile-menu-close:focus{outline:3px solid rgba(255,255,255,0.12)}
 
-        /* Prevent body scroll when menu open */
-        .no-scroll{overflow:hidden;height:100%}
+               .no-scroll{overflow:hidden;height:100%}
 
-        /* Hero Section */
+       
         .hero-bg{
             background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);
-            min-height:75vh; /* Taller hero section */
+            min-height:75vh; 
             display:flex;
             align-items:center;
-            padding: 4rem 0; /* Add vertical padding */
+            padding: 4rem 0; 
         }
         .hero-text h1{
-            font-size:2.8rem; /* Larger hero heading */
+            font-size:2.8rem; 
             margin:0 0 .8rem;
             color:#fff;
             line-height: 1.2;
@@ -219,57 +216,57 @@
         .hero-text p{
             color:#fff;
             opacity:.95;
-            margin-bottom:1.5rem; /* More space below paragraph */
-            font-size:1.1rem; /* Larger paragraph font */
+            margin-bottom:1.5rem; 
+            font-size:1.1rem; 
         }
         .hero-img{
-            filter:brightness(1.05) contrast(1.05) drop-shadow(0 15px 30px rgba(0,0,0,0.2)); /* Enhanced shadow */
+            filter:brightness(1.05) contrast(1.05) drop-shadow(0 15px 30px rgba(0,0,0,0.2));
             border-radius:10px;
             width:100%;
             display:block;
-            transition: transform 0.3s ease; /* Smooth hover effect */
+            transition: transform 0.3s ease; 
         }
         .hero-img:hover {
             transform: translateY(-5px);
         }
 
-        /* Hero inner layout */
+      
         .hero-inner{
             display:flex;
             align-items:center;
-            gap:2rem; /* More space between columns */
+            gap:2rem;
             flex-wrap:wrap;
             padding:2rem .75rem;
         }
         .hero-column{
             flex:1;
-            min-width:280px; /* Larger min-width for columns */
+            min-width:280px;
         }
 
-        /* Menu Grid & Cards */
+       
         .menu-grid{
             display:grid;
             grid-template-columns:1fr;
-            gap:1.5rem; /* More space between cards */
+            gap:1.5rem;
         }
         .menu-card{
             background:var(--card-bg);
             border-radius:12px;
             overflow:hidden;
-            box-shadow:0 8px 20px rgba(17,24,39,0.08); /* Stronger shadow */
-            transition:transform .2s ease,box-shadow .2s ease; /* Smooth transitions */
+            box-shadow:0 8px 20px rgba(17,24,39,0.08);
+            transition:transform .2s ease,box-shadow .2s ease;
         }
         .menu-card:hover{
-            transform:translateY(-8px); /* More pronounced lift */
-            box-shadow:0 18px 40px rgba(17,24,39,0.15); /* Stronger shadow on hover */
+            transform:translateY(-8px);
+            box-shadow:0 18px 40px rgba(17,24,39,0.15);
         }
         .menu-card img{
             width:100%;
-            height:12rem; /* Taller images */
+            height:12rem; 
             object-fit:cover;
         }
         .menu-card .card-body{
-            padding:1rem 1.2rem; /* More padding */
+            padding:1rem 1.2rem;
         }
         .menu-card h3 {
             font-size: 1.3rem;
@@ -282,26 +279,26 @@
         .price{
             color:var(--accent);
             font-weight:700;
-            font-size:1.2rem; /* Larger price font */
+            font-size:1.2rem;
         }
         .menu-actions{
             display:flex;
             gap:.75rem;
             align-items:center;
-            justify-content: space-between; /* Space out price and button */
+            justify-content: space-between;
             margin-top: 1rem;
         }
 
-        /* Form Styles */
+       
         form{
             background:var(--card-bg);
-            padding:1.5rem; /* More padding */
+            padding:1.5rem;
             border-radius:10px;
             box-shadow:0 6px 20px rgba(0,0,0,0.05);
         }
         form label{
             display:block;
-            margin-bottom:.5rem; /* More space below label */
+            margin-bottom:.5rem; 
             color:var(--muted);
             font-weight:600;
             font-size:.95rem;
@@ -949,3 +946,4 @@
     </script>
 </body>
 </html>
+
